@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    
+    {{!-- <link rel="stylesheet" href="css/admindash.css"> --}}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    
+    <title>Admin Dashboard</title>
+    <style>
+        .dashnavbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .formcontainer {
+            margin: 0 auto;
+            width: 60vw;
+            height: 50vw;
+            border: 2px solid black;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        .do {
+            display: inline-block;
+            text-align: right;
+            width: 9vw;
+        }
+        .field {
+            display: inline-block;
+            width: 20rem;
+            margin-left: 1rem;
+        }
+
+        .form-group {
+            margin: 1rem 0;
+        }
+
+        .col-md-6 {
+            flex: 0 0 auto;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    {{>navbar}}
+    </nav>
+    <div class="formcontainer">
+        <h1 class="text-center login-title my-5" style="color: red;">UPDATE MARKS </h1>
+    
+        <form action="/edit/students/marks/{{_id}}" method="POST">
+              <div class="form-group">
+                        <label for="firstname" class="do">FirstName: </label>
+                        <input type="text" readonly id="firstname" value=" {{firstname}}" name="firstname" class="field">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastname" class="do">LastName : </label>
+                        <input type="text" readonly id="email" value="{{lastname}}" name="lastname" class="field">
+                    </div>
+                    <div class="form-group">
+                        <label for="Enrollnment" class="do">Enrollment : </label>
+                        <input type="text" readonly minlength="10" maxlength="10" class="field" value="{{Enrollment}}" name="phonenumber"
+                            id="phonenumber">
+                    </div>
+                    <div class="form-group">
+                        <label for="coursename" class="do ">CourseName: </label>
+                        <input type="text" readonly class="field" value="{{coursename}}"  name="department"
+                            >
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="courseid" class="do">CourseId : </label>
+                        <input type="text" readonly class="field" value="{{courseid}}"
+                            name="id">
+                    </div>
+                    <div class="form-group">
+                        <label for="username" class="do"> Marks: </label>
+                        <input type="username"  class="field"  
+                             name="marks" placeholder="{{marks}}">
+                    </div>
+                   
+                   
+                  
+                        <input type="submit" class=" btn  btn-primary " value="update" style="text-align: center;">
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+         <script src="../jq/jquery.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script> 
+</body>
+
+</html>  

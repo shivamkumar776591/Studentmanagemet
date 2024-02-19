@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    
+    {{!-- <link rel="stylesheet" href="css/admindash.css"> --}}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    
+    <title>Admin Dashboard</title>
+    <style>
+        .dashnavbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .formcontainer {
+            margin: 0 auto;
+            width: 60vw;
+            height: 50vw;
+            border: 2px solid black;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        .do {
+            display: inline-block;
+            text-align: right;
+            width: 9vw;
+        }
+        .field {
+            display: inline-block;
+            width: 20rem;
+            margin-left: 1rem;
+        }
+
+        .form-group {
+            margin: 1rem 0;
+        }
+
+        .col-md-6 {
+            flex: 0 0 auto;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    {{>navbar}}
+    </nav>
+    <div class="formcontainer">
+        <h1 class="text-center login-title my-5" style="color: red;">UPDATE STUDENT <DETAILS></DETAILS></h1>
+        <form action="/edit/students/details/{{id}}" method="POST">
+               <div class="form-group">
+                        <label for="email" class="do">FirstName : </label>
+                        <input type="text"  id="email" value=" {{firstname}}" name="firstname" class="field">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="do">LastName : </label>
+                        <input type="text"  id="email" value=" {{lastname}}" name="lastname" class="field">
+                    </div>
+                    <div class="form-group">
+                        <label for="phonenumber" class="do">Enrollment : </label>
+                        <input type="text" readonly minlength="8" maxlength="8" class="field" value="{{enrollment}}" name="enrollment"
+                            id="phonenumber">
+                    </div>
+                    <div class="form-group">
+                        <label for="department" class="do ">Sem: </label>
+                        <input type="text"  class="field" value="{{sem}}" list="departmentOptions" name="sem">
+            
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="id" class="do">Branch : </label>
+                        <input type="text"  class="field" value="{{Branch}}"
+                            name="branch">
+                    </div>
+                    <div class="form-group">
+                        <label for="username" class="do"> Batch: </label>
+                        <input type="username" readonly class="field"  
+                            value="{{batch}}" name="marks">
+                    </div>
+                    <div class="form-group">
+                        <label for="id" class="do">FathersName : </label>
+                        <input type="text"  class="field" value="{{fathername}}"
+                            name="fathername">
+                    
+                    <div>
+                        <input type="submit" class=" btn  btn-primary "  style="text-align: center;">
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+        <script src="../jq/jquery.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+</body>
+
+</html>

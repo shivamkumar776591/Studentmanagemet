@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Detail</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+{{!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> --}}
+{{!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> --}}
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+  h2{
+    text-align: center;
+  }
+  {{!-- body{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1rem;
+  } --}}
+  {{!-- .search-table{
+    padding: 10%;
+    margin-top: -6%;
+}
+.search-box{
+    background: #c1c1c1;
+    border: 1px solid #ababab;
+    padding: 3%;
+}
+.search-box input:focus{
+    box-shadow:none;
+    border:2px solid #eeeeee;
+}
+.search-list{
+    background: #fff;
+    border: 1px solid #ababab;
+    border-top: none;
+}
+.search-list h3{
+    background: #eee;
+    padding: 3%;
+    margin-bottom: 0%;
+} --}}
+</style>
+</head>
+<body>
+  {{>navbar}}
+  <a href="/logout"><button>logout</button></a>
+  </nav>
+<div class="container search-table">
+            <div class="search-box">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>Search All Fields</h5>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search all fields ">
+                        <script>
+                            $(document).ready(function () {
+                                $("#myInput").on("keyup", function () {
+                                    var value = $(this).val().toLowerCase();
+                                    $("#myTable tr").filter(function () {
+                                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                    });
+                                });
+                            });
+                        </script>
+                    </div> 
+                </div>
+            </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+
+
+<div class="container">
+	<h2>{{username}}</h2>
+  <div class="row">
+    
+		
+        
+        <div class="col-md-12">
+        <h4>Student Data</h4>
+        <div class="table-responsive">
+
+                
+              <table id="myTable" class="table table-bordred table-striped">
+                   
+                   <thead>
+                   
+                  
+                   <th>First Name</th>
+                    <th>Last Name</th>
+                     
+                     <th>Sem</th>
+                     <th>CourseName</th>
+                      <th>CourseId</th>
+                     <th>Marks</th>
+                      <th>Enrollment</th>
+                      <th>Edit</th>
+                      
+                       
+                   </thead>
+    <tbody>
+    
+    <tr>
+      {{#newListItems}}
+  
+    <td>{{firstname}}</td>
+    <td>{{lastname}}</td>
+
+    <td>{{sem}}</td>
+    <td>{{coursename}}</td>
+     <td>{{courseid}}</td>
+     <td>{{marks}}</td>
+    <td>{{Enrollment}}</td>
+    <td><p data-placement="top" data-toggle="tooltip" title="Edit"><a href="/edit/students/marks/{{_id}}"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></a></p></td>
+    
+    </tr>
+    
+   
+    
+   
+    
+    </tbody>
+        {{/newListItems}}
+</table>
+
+
+</body>
+<script>
+  {{!-- $(document).ready(function(){
+$("#mytable #checkall").click(function () {
+        if ($("#mytable #checkall").is(':checked')) {
+            $("#mytable input[type=checkbox]").each(function () {
+                $(this).prop("checked", true);
+            });
+
+        } else {
+            $("#mytable input[type=checkbox]").each(function () {
+                $(this).prop("checked", false);
+            });
+        }
+    });
+    
+    $("[data-toggle=tooltip]").tooltip();
+}); --}}
+
+</script>
+</html>

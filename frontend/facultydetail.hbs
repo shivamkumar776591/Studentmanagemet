@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>faculty </details></title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/cf71807c6f.js" crossorigin="anonymous"></script>
+<style>
+    
+     .media
+    {
+        /*box-shadow:0px 0px 4px -2px #000;*/
+        margin: 20px 0;
+        padding:30px;
+    }
+    .dp
+    {
+        border:10px solid #eee;
+        transition: all 0.2s ease-in-out;
+    }
+    .dp:hover
+    {
+        border:2px solid #eee;
+        transform:rotate(360deg);
+        -ms-transform:rotate(360deg);  
+        -webkit-transform:rotate(360deg);  
+        /*-webkit-font-smoothing:antialiased;*/
+    }
+</style>
+</head>
+<body>
+   
+
+
+<div class="row">
+
+  {{#newListItems }} 
+ 
+    <div class="col-lg-5">
+        <div class="media">
+            
+                
+            
+
+            
+
+          
+            
+        
+
+            
+           
+            <a class="pull-left" href="#">
+                 <i class="media-object dp img-circle fa-solid fa-user fa-6x"></i>
+            </a>
+            <div class="media-body">
+               
+                <h4 class="media-heading">{{username }} <small> India</small></h4>
+                <h5>Masters in <a href="http://gridle.in">{{ecourse}}</a></h5>
+                <hr style="margin:8px auto">
+
+                <span class="label label-default">{{tcourse1 }}</span>
+                <span class="label label-default">{{tcourse2}}</span>
+             
+                <span class="label label-default">{{ email}}</span>
+            </div>
+        </div>
+            
+           
+        
+
+    </div>
+
+     
+  
+            
+            {{/newListItems}}
+
+</div>
+</body>
+
+</html>
